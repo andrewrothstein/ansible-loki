@@ -1,0 +1,7 @@
+---
+loki_name: '{{ loki_app }}-{{ loki_platform }}'
+loki_checksum: '{{ loki_checksums[loki_ver][loki_app][loki_platform] }}'
+loki_url: '{{ loki_mirror }}/v{{ loki_ver }}/{{ loki_name }}{{ loki_dotexe | default("") }}.zip'
+loki_tmp_archive: '{{ loki_tmp_dir | default("/tmp") }}/{{ loki_name }}{{ loki_dotexe | default("") }}.zip'
+loki_install_exe: '{{ loki_install_dir }}/{{ loki_app }}-{{ loki_platform }}'
+loki_link: '{{ loki_parent_install_dir }}/bin/{{ loki_app }}'

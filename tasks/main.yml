@@ -1,0 +1,22 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: mkdir -p {{ loki_install_dir }}
+  become: true
+  become_user: root
+  file:
+    path: '{{ loki_install_dir }}'
+    state: directory
+    mode: 0755
+- loop: '{{ loki_apps }}'
+  loop_control:
+    loop_var: loki_app
+  include_tasks: install-program.yml

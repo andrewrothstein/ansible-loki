@@ -1,0 +1,4 @@
+---
+# vars file for loki
+loki_platform: '{{ loki_os }}-{{ loki_arch }}'
+loki_install_dir: '{{ loki_parent_install_dir }}/loki-{{ loki_platform }}-{{ loki_ver }}'

@@ -1,0 +1,42 @@
+---
+- name: resolving vars for {{ loki_app }} v{{ loki_ver }}
+  include_vars:
+    file: install-vars.yml
+- name: looking for install in {{ loki_install_exe }}
+  become: true
+  stat:
+    path: '{{ loki_install_exe }}'
+  changed_when: false
+  register: loki_binary
+- when: not loki_binary.stat.exists
+  block:
+    - name: downloading {{ loki_url }} to {{ loki_tmp_archive }}
+      become: true
+      become_user: root
+      get_url:
+        url: '{{ loki_url }}'
+        dest: '{{ loki_tmp_archive }}'
+        checksum: '{{ loki_checksum }}'
+        mode: 0644
+    - name: unarchiving {{ loki_tmp_archive }} to {{ loki_install_dir }}
+      become: true
+      become_user: root
+      unarchive:
+        remote_src: true
+        src: '{{ loki_tmp_archive }}'
+        dest: '{{ loki_install_dir }}'
+        creates: '{{ loki_install_exe }}'
+  always:
+    - name: rm -f {{ loki_tmp_archive }}
+      become: true
+      become_user: root
+      file:
+        path: '{{ loki_tmp_archive }}'
+        state: absent
+- name: linking {{ loki_link }} to {{ loki_install_exe }}
+  become: true
+  become_user: root
+  file:
+    src: '{{ loki_install_exe }}'
+    dest: '{{ loki_link }}'
+    state: link

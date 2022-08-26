@@ -1,0 +1,66 @@
+---
+# defaults file for loki
+loki_ver: 2.6.1
+loki_os: linux
+loki_arch: amd64
+loki_parent_install_dir: /usr/local
+loki_mirror: https://github.com/grafana/loki/releases/download
+loki_apps:
+  - loki
+  - loki-canary
+  - promtail
+  - logcli
+loki_checksums:
+  '2.6.1':
+    loki:
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-linux-amd64.zip
+      linux-amd64: sha256:f9c577d54e35e5f46b1a9d0e0788299a0c1e69975ee999d27c3dc711942cc973
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-linux-arm.zip
+      linux-arm: sha256:1a1f216c7486af81c60ffb98766aa5be7d0a82d4a98f988aa4360929192c911f
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-linux-arm64.zip
+      linux-arm64: sha256:8679a7a6260ae67bdc50d50ba51cfa2817b6aba9ededf63b62dc8670552507a1
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-darwin-amd64.zip
+      darwin-amd64: sha256:ab18da94a900edcda0bee6b59d10f385fd47486282ebf08accc7adb012edd93e
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-darwin-arm64.zip
+      darwin-arm64: sha256:dd63acd073ef5305f0f90651d75d6fe2810d5f2811ec366bf05e7545eb8aa6ff
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-windows-amd64.exe.zip
+      windows-amd64: sha256:f4c3042d801cf4ea7a99e2b3fe249339e44e00d00700da04a95a8276ea8ad4fa
+    loki-canary:
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-canary-linux-amd64.zip
+      linux-amd64: sha256:f26eadbfb32002ae34295fbaa0907cd1dd4594b4fc3c461d854b25379bfbb9d5
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-canary-linux-arm.zip
+      linux-arm: sha256:a87578efdbf469b3bf789ccc1788e8083bed4e64f5f1637ab1517b087b358918
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-canary-linux-arm64.zip
+      linux-arm64: sha256:20d5ddcd4c216c51f9690eeedd24e7bf900f8b1c0c1eef16529681eaadb33a51
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-canary-darwin-amd64.zip
+      darwin-amd64: sha256:936a7d45a9f97b70f57515656d72874c42ef79c252179c9310a5ad93e3d10fa4
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-canary-darwin-arm64.zip
+      darwin-arm64: sha256:72b596266b9b8156fb46a70e1ab8570fb58d7d8727fa6b4ce574ed514bbd85d3
+      # https://github.com/grafana/loki/releases/download/v2.6.1/loki-canary-windows-amd64.exe.zip
+      windows-amd64: sha256:112c70464d7462cf02c5389e29ddedee77b8e55837bb8ae4b74563fcdcb29915
+    promtail:
+      # https://github.com/grafana/loki/releases/download/v2.6.1/promtail-linux-amd64.zip
+      linux-amd64: sha256:5d06002daf82b0b04ad1dacfca4876a13a114fcc484b324df353c409abdfb3bc
+      # https://github.com/grafana/loki/releases/download/v2.6.1/promtail-linux-arm.zip
+      linux-arm: sha256:a5a05e39df4c10700956b1321dbf8dfb46a8df6090dac02373dfc3c12755f331
+      # https://github.com/grafana/loki/releases/download/v2.6.1/promtail-linux-arm64.zip
+      linux-arm64: sha256:1f6a1241371fa43cf8718e69afa116cfccc099ee3d7732307d84ceb08f998d81
+      # https://github.com/grafana/loki/releases/download/v2.6.1/promtail-darwin-amd64.zip
+      darwin-amd64: sha256:2f9fa72f37051431cebcf8cc3ab5258964f3e6a41c7f48d2eaa5593dbd759522
+      # https://github.com/grafana/loki/releases/download/v2.6.1/promtail-darwin-arm64.zip
+      darwin-arm64: sha256:60115629e695184fd10617b35542ba2c4a03444116458b227588f9bf68e46c92
+      # https://github.com/grafana/loki/releases/download/v2.6.1/promtail-windows-amd64.exe.zip
+      windows-amd64: sha256:d3e405902d3b14f453060edb66f7f236c96c9276d12b6f796c804efaa04517f6
+    logcli:
+      # https://github.com/grafana/loki/releases/download/v2.6.1/logcli-linux-amd64.zip
+      linux-amd64: sha256:8fe59a3b2f83c02920f29251a97ad1f6d4a83a8bbbc20097b73fb839d946cb75
+      # https://github.com/grafana/loki/releases/download/v2.6.1/logcli-linux-arm.zip
+      linux-arm: sha256:2ad747a3bba8bff77f03f7f38edb6c2f60d186a8e1bd395c425c0ed5d0676c1f
+      # https://github.com/grafana/loki/releases/download/v2.6.1/logcli-linux-arm64.zip
+      linux-arm64: sha256:e2c3cb728402087cadc120e190d617db8e0b39eb21bbff73f0d040e535822ca8
+      # https://github.com/grafana/loki/releases/download/v2.6.1/logcli-darwin-amd64.zip
+      darwin-amd64: sha256:f2c8583460e86fd8ba07cd055340b9f7432cf8df05d5afd333f6277dc420b009
+      # https://github.com/grafana/loki/releases/download/v2.6.1/logcli-darwin-arm64.zip
+      darwin-arm64: sha256:81dafec9d6357fa3303bc3d913df45e11a364dbc2577fa6b948f2bd0620ab565
+      # https://github.com/grafana/loki/releases/download/v2.6.1/logcli-windows-amd64.exe.zip
+      windows-amd64: sha256:5cca9c2c498c50f07c6a5f6e9a8aa22ab9cfb480263f90f3c586b711b9964e0d
